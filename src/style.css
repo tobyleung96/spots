@@ -3,20 +3,169 @@
 body {
     font-family: 'Monofett', cursive;
     margin: 0;
-    height: 100%;
-    overflow: auto;
+}
+
+.pageWrapper {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #0000ed;
+}
+
+.pageWrapperShortened {
+    width: 100vw;
+    min-height: 90vh;
+    max-height:90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: #0000ed; */
+}
+
+.pageCentered {
+    width: 60%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* background-color: gray; */
+}
+
+.landingContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    /* background-color: rgb(0, 0, 0); */
+}
+
+.logo--title {
+    font-size: 10vh;
+}
+
+.logo--title1 {
+    color: #FF0000;
+}
+.logo--title2 {
+    color: #FF6B00;
+}
+.logo--title3 {
+    color: #14FF00;
+}
+.logo--title4 {
+    color: #0029FF;
+}
+.logo--title5 {
+    color: #FF008A;
+}
+
+.logo--subtitle {
+    font-size: 3vh;
+}
+
+.landingDots {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    /* background-color: rgb(255, 183, 0); */
+}
+
+.landingDots > .spot {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.landingButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    /* background-color: rgb(255, 0, 179); */
+}
+
+.landingButton {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.loginBubble {
+    width: 30em;
+    height: 30em;
+    border-radius: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login--title {
+    color: white;
+    font-size: 3em;
+}
+
+.login--form {
+    margin-top: 0.5em;
+    font-family: sans-serif;
+    color: white;
+}
+
+.login--form label {
+    font-family: 'Monofett', cursive;
+    font-size: 1.5em;
 }
 
 .header {
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    /* border-bottom: 0.5px solid #000000; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    background-color: white;
 }
 
 .header--logo {
-    font-size: 2.5em;
+    font-size: 4vh;
     letter-spacing: 0.15em;
+    padding-left: 1vh;
+    padding-right: 1vh;
+
+    /* background-color: #FF008A; */
 }
 
-.main {
+.footer {
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: rgb(213, 213, 213);
+}
+
+
+/* .main {
     padding: 30px;
 }
 
@@ -34,4 +183,4 @@ body {
     height:100px;
     width:100px;
 }
-
+ */

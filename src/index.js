@@ -1,8 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import LandingPage from "./LandingPage"
+import App from "./App"
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
 
-ReactDOM.render(<LandingPage />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
