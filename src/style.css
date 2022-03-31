@@ -23,18 +23,28 @@ body {
     justify-content: center;
     align-items: center;
 
-    /* background-color: #0000ed; */
+    background-color: #0000ed;
 }
 
 .pageCentered {
     width: 60%;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    /* background-color: gray; */
+    background-color: gray;
+}
+
+.pageCentered2 {
+    width: 60%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(183, 183, 183);
 }
 
 .landingContent {
@@ -123,7 +133,17 @@ body {
     font-size: 3em;
 }
 
-.login--form {
+.login--input{
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+.login--button{
+    margin-top: 1em;
+    border-radius: 10%;
+}
+
+/* .login--form {
     margin-top: 0.5em;
     font-family: sans-serif;
     color: white;
@@ -132,14 +152,14 @@ body {
 .login--form label {
     font-family: 'Monofett', cursive;
     font-size: 1.5em;
-}
+} */
 
 .header {
     height: 5vh;
     line-height: 5vh;
     text-align: center;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     /* border-bottom: 0.5px solid #000000; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -155,6 +175,16 @@ body {
     /* background-color: #FF008A; */
 }
 
+.logOff--button {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    border-radius: 0.25em;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+}
+
 .footer {
     height: 5vh;
     line-height: 5vh;
@@ -163,6 +193,70 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: rgb(213, 213, 213);
 }
+
+.huePickers {
+    min-height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20vh;
+
+    background-color: #FF6B00;
+}
+
+.huePicker {
+    width: 100%;;
+}
+
+.huePicker--selector {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    background-color: darkgreen;
+}
+
+.huePicker--swatches {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+
+    background-color: rgb(37, 55, 23);
+}
+
+.huePicker--swatch {
+    height: 10vh;
+    width:10vh;
+    border-radius: 100%;
+
+    background-color: darkcyan;
+}
+
+.confirmEntry {
+    margin-top: 1em;
+    margin-bottom:1em;
+    background-color: yellow;
+}
+
+.toggleButtons{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    background-color: goldenrod;
+}
+
+.dotHistory{
+    background-color: orange;
+}
+
+
+
 
 
 /* .main {
