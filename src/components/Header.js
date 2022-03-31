@@ -24,7 +24,9 @@ export default function Header() {
 
   return (
     <div className="header">
-      <div className="header--logo">S P O T S</div>
+      <div className="header--logo" onClick={useNavigate("/")}>
+        S P O T S
+      </div>
       <div className="header--left">
         <div className="header--user">Logged in as {name}</div>
         <button className="logOff--button" onClick={logout}>

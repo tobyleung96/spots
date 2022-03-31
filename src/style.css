@@ -1,146 +1,150 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
 
 body {
-    font-family: 'Monofett', cursive;
-    margin: 0;
+  font-family: "Monofett", cursive;
+  margin: 0;
 }
 
 .pageWrapper {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: #0000ed;
+  /* background-color: #0000ed; */
 }
 
 .pageWrapperShortened {
-    width: 100vw;
-    min-height: 90vh;
-    max-height:90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  min-height: 90vh;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: #0000ed;
+  /* background-color: #0000ed; */
 }
 
 .pageCentered {
-    width: 60%;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 60%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    background-color: gray;
+  /* background-color: gray; */
 }
 
 .pageCentered2 {
-    width: 60%;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 60%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    background-color: rgb(183, 183, 183);
+  /* background-color: rgb(183, 183, 183); */
 }
 
 .landingContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .landingLogo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 
-    /* background-color: rgb(0, 0, 0); */
+  /* background-color: rgb(0, 0, 0); */
 }
 
 .logo--title {
-    font-size: 10vh;
+  font-size: 10vh;
 }
 
 .logo--title1 {
-    color: #FF0000;
+  color: #ff0000;
 }
 .logo--title2 {
-    color: #FF6B00;
+  color: #ff6b00;
 }
 .logo--title3 {
-    color: #14FF00;
+  color: #14ff00;
 }
 .logo--title4 {
-    color: #0029FF;
+  color: #0029ff;
 }
 .logo--title5 {
-    color: #FF008A;
+  color: #ff008a;
 }
 
 .logo--subtitle {
-    font-size: 3vh;
+  font-size: 3vh;
 }
 
 .landingDots {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 
-    /* background-color: rgb(255, 183, 0); */
+  /* background-color: rgb(255, 183, 0); */
 }
 
 .landingDots > .spot {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .landingButtons {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 
-    /* background-color: rgb(255, 0, 179); */
+  /* background-color: rgb(255, 0, 179); */
 }
 
 .landingButton {
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 0.5em;
+  padding: 5px;
 }
 
 .loginBubble {
-    width: 30em;
-    height: 30em;
-    border-radius: 100%;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 30em;
+  height: 30em;
+  border-radius: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login--title {
-    color: white;
-    font-size: 3em;
+  color: white;
+  font-size: 3em;
 }
 
-.login--input{
-    font-family: sans-serif;
-    font-size: 1em;
+.login--input {
+  font-family: sans-serif;
+  font-size: 1em;
 }
 
-.login--button{
-    margin-top: 1em;
-    border-radius: 10%;
+.login--button {
+  margin-top: 1em;
+  border-radius: 10%;
 }
 
 /* .login--form {
@@ -155,109 +159,115 @@ body {
 } */
 
 .header {
-    height: 5vh;
-    line-height: 5vh;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    /* border-bottom: 0.5px solid #000000; */
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 5vh;
+  line-height: 5vh;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 0.5px solid #000000; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    background-color: white;
+  /* background-color: white; */
 }
 
 .header--logo {
-    font-size: 4vh;
-    letter-spacing: 0.15em;
-    padding-left: 1vh;
-    padding-right: 1vh;
+  font-size: 4vh;
+  letter-spacing: 0.15em;
+  padding-left: 1vh;
+  padding-right: 1vh;
 
-    /* background-color: #FF008A; */
+  /* background-color: #FF008A; */
 }
 
 .logOff--button {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-right: 0.5em;
-    border-radius: 0.25em;
-    display: flex;
-    align-items: center;
-    font-family: sans-serif;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 0.25em;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
 }
 
 .footer {
-    height: 5vh;
-    line-height: 5vh;
-    text-align: center;
-    justify-content: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: rgb(213, 213, 213);
+  height: 5vh;
+  line-height: 5vh;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: rgb(213, 213, 213);
 }
 
 .huePickers {
-    min-height: 40vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20vh;
+  min-height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20vh;
 
-    background-color: #FF6B00;
+  /* background-color: #FF6B00; */
 }
 
 .huePicker {
-    width: 100%;;
+  width: 100%;
 }
 
 .huePicker--selector {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 
-    background-color: darkgreen;
+  /* background-color: darkgreen; */
 }
 
 .huePicker--swatches {
-    height: 10vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 1em;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
 
-    background-color: rgb(37, 55, 23);
+  /* background-color: rgb(37, 55, 23); */
 }
 
 .huePicker--swatch {
-    height: 10vh;
-    width:10vh;
-    border-radius: 100%;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 100%;
 
-    background-color: darkcyan;
+  /* background-color: darkcyan; */
 }
 
 .confirmEntry {
-    margin-top: 1em;
-    margin-bottom:1em;
-    background-color: yellow;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  /* background-color: yellow; */
 }
 
-.toggleButtons{
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.toggleButtons {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
-    background-color: goldenrod;
+  /* background-color: goldenrod; */
 }
 
-.dotHistory{
-    background-color: orange;
+.dotHistory {
+  /* background-color: orange; */
 }
 
-
-
-
+.spot {
+  border: solid black 1px;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* .main {
     padding: 30px;
