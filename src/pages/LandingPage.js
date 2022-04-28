@@ -1,8 +1,23 @@
 import React from "react";
-import Spot from "../components/Spot";
+import SpotsArray from "../components/SpotsArraysWrapper";
 import { Link, useNavigate } from "react-router-dom";
+import convert from "color-convert/conversions";
 
 export default function LandingPage() {
+  const randomSpotsData = [
+    convert.hsv.rgb([Math.floor(Math.random() * 255) + 1, 100, 100]),
+    convert.hsv.rgb([Math.floor(Math.random() * 255) + 1, 100, 100]),
+    convert.hsv.rgb([Math.floor(Math.random() * 255) + 1, 100, 100]),
+    convert.hsv.rgb([Math.floor(Math.random() * 255) + 1, 100, 100]),
+    convert.hsv.rgb([Math.floor(Math.random() * 255) + 1, 100, 100]),
+  ];
+
+  // inputColor={convert.hsv.rgb([
+  //   Math.floor(Math.random() * 255) + 1,
+  //   100,
+  //   100,
+  // ])}
+
   return (
     <div className="pageWrapper">
       <div className="pageCentered">
@@ -18,11 +33,7 @@ export default function LandingPage() {
             <span className="logo--subtitle">The Color Diary</span>
           </div>
           <div className="landingDots">
-            <Spot />
-            <Spot />
-            <Spot />
-            <Spot />
-            <Spot />
+            <SpotsArray spotsData={randomSpotsData} />
           </div>
           <div className="landingButtons">
             <div className="landingButton">

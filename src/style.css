@@ -18,7 +18,6 @@ body {
 .pageWrapperShortened {
   width: 100vw;
   min-height: 90vh;
-  max-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,6 +118,9 @@ body {
   border: 1px black solid;
   border-radius: 0.5em;
   padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loginBubble {
@@ -255,18 +257,26 @@ body {
   /* background-color: goldenrod; */
 }
 
-.dotHistory {
+.spotsArrays--wrapper {
   /* background-color: orange; */
+  display: flex;
+  flex-direction: column;
+}
+
+.spotsArray {
+  display: flex;
+  flex-direction: row;
 }
 
 .spot {
-  border: solid black 1px;
+  /* border: solid black 1px; */
   border-radius: 100%;
   height: 100px;
   width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1.5vw;
 }
 
 /* .main {
