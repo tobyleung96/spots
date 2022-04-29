@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Button } from "react-bootstrap";
+import { Button, ButtonGroup, ToggleButton } from "react-bootstrap";
 import HuePickerModified from "../components/HuePickerModified";
 import convert from "color-convert/conversions";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -17,11 +17,19 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import PersonalSpotsHistory from "../components/PersonalSpotsHistory";
+import GlobalSpotsHistory from "../components/GlobalSpotsHistory";
 
 export default function Home() {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
+
+  const [radioValue, setRadioValue] = useState("1");
+
+  const radios = [
+    { name: "Personal", value: "1" },
+    { name: "Global", value: "2" },
+  ];
 
   const fetchUserName = async () => {
     try {
@@ -32,7 +40,7 @@ export default function Home() {
       setName(data.name);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      // alert("An error occured while fetching user data");
     }
   };
 
@@ -54,6 +62,18 @@ export default function Home() {
         (new Date().getMonth() + 1).toString() +
         "-" +
         new Date().getDate().toString();
+      // Saving or updating uniqueDates collection
+      const dateCollectionRef = collection(db, "uniqueDates");
+      const dateQuery = query(
+        dateCollectionRef,
+        where("date", "==", dateString)
+      );
+      const dateQuerySnapshot = await getDocs(dateQuery);
+      if (dateQuerySnapshot.empty === true) {
+        await addDoc(dateCollectionRef, { date: dateString });
+      }
+
+      // Saving or updating dotHistory collection
       const collectionRef = collection(db, "dotHistory");
       const q = query(
         collectionRef,
@@ -152,18 +172,34 @@ export default function Home() {
             </Button>
           </div>
           <div className="toggleButtons">
-            <Button className="toggleButton" variant="outline-secondary">
-              Personal
-            </Button>
-            <Button className="toggleButton" variant="outline-secondary">
-              World
-            </Button>
+            <ButtonGroup>
+              {radios.map((radio, idx) => (
+                <ToggleButton
+                  className="radioToggle"
+                  key={idx}
+                  id={`radio-${idx}`}
+                  type="radio"
+                  variant={idx % 2 ? "outline-success" : "outline-danger"}
+                  name="radio"
+                  value={radio.value}
+                  checked={radioValue === radio.value}
+                  onChange={(e) => setRadioValue(e.currentTarget.value)}
+                >
+                  {radio.name}
+                </ToggleButton>
+              ))}
+            </ButtonGroup>
           </div>
           <div className="dotHistory">
-            <div className="PersonalSpotHistory">
-              <PersonalSpotsHistory />
-            </div>
-            <div className="GlobalSpotHistory"></div>
+            {radioValue == 1 ? (
+              <div className="PersonalSpotHistory">
+                <PersonalSpotsHistory />
+              </div>
+            ) : (
+              <div className="GlobalSpotHistory">
+                <GlobalSpotsHistory />
+              </div>
+            )}
           </div>
         </div>
       </div>

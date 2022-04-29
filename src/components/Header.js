@@ -17,22 +17,34 @@ export default function Header() {
 
       setName(data.name);
     } catch (err) {
-      console.error(err);
-      alert("An error occured while fetching user data");
+      // console.error(err);
+      // alert("An error occured while fetching user data");
     }
   };
+
+  useEffect(() => {
+    if (loading) {
+      return;
+    } else {
+      fetchUserName();
+    }
+  }, [user, loading]);
 
   return (
     <div className="header">
       <div className="header--logo" onClick={useNavigate("/")}>
         S P O T S
       </div>
-      <div className="header--left">
-        <div className="header--user">Logged in as {name}</div>
-        <button className="logOff--button" onClick={logout}>
-          Sign Out
-        </button>
-      </div>
+      {name == "" ? (
+        <p></p>
+      ) : (
+        <div className="header--right">
+          <div className="header--user">{name}</div>
+          <button className="logOff--button" onClick={logout}>
+            Sign Out
+          </button>
+        </div>
+      )}
     </div>
   );
 }

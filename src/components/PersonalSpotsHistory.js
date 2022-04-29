@@ -19,7 +19,7 @@ export default function PersonalSpotsHistory() {
       if (querySnapshot.empty == false) {
         querySnapshot.docs.forEach((item) => {
           //   item.data() = {date: '2022-4-27', color3: 'rgb(77, 255, 0)', color5: 'rgb(255, 157, 0)', color4: 'rgb(17, 0, 255)', color1: 'rgb(0, 34, 255)', …}
-          // const date = item.data().date;
+          const date = item.data().date;
           const color1 = item.data().color1;
           const color2 = item.data().color2;
           const color3 = item.data().color3;
@@ -27,7 +27,7 @@ export default function PersonalSpotsHistory() {
           const color5 = item.data().color5;
           setPersonalSpots((personalSpots) => [
             ...personalSpots,
-            [color1, color2, color3, color4, color5],
+            [color1, color2, color3, color4, color5, date],
           ]);
           setIsLoadingQuery(true);
         });
@@ -36,7 +36,7 @@ export default function PersonalSpotsHistory() {
       }
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      // alert("An error occured while fetching user data");
     }
   };
 
@@ -52,7 +52,7 @@ export default function PersonalSpotsHistory() {
       {isLoadingQuery ? (
         <SpotsArrays spotsData={personalSpots} />
       ) : (
-        <p>Loading</p>
+        <p>Loading...</p>
       )}
     </div>
   );
