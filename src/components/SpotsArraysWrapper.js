@@ -33,10 +33,7 @@ export function SpotsArray(props) {
   );
 }
 
-// feed.filter((item, index) => index < 5).map((filteredItem)
-
 export default function SpotsArraysWrapper(props) {
-  // console.log("props.spotsData", props.spotsData);
   return (
     <div className="spotsArrays--wrapper">
       {props.spotsData.map((spotArray) => (

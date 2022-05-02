@@ -24,7 +24,7 @@ export default function GlobalSpotsHistory() {
     return uniqueDates;
   };
 
-  const fetchDocsOfDate = async (uniqueDate) => {
+  async function fetchDocsOfDate(uniqueDate) {
     let color1 = [[], [], []];
     let color2 = [[], [], []];
     let color3 = [[], [], []];
@@ -138,46 +138,29 @@ export default function GlobalSpotsHistory() {
       uniqueDate,
     ];
     return output;
-  };
+  }
 
   const fetchGlobalSpotsHistory = async () => {
     try {
       const uniqueDatesFetched = await fetchUniqueDates();
-      uniqueDatesFetched.forEach((date) => {
-        const fetchedColorArray = fetchDocsOfDate(date);
-        setGlobalSpots((globalSpots) => [...globalSpots, fetchedColorArray]);
+      await uniqueDatesFetched.forEach((date) => {
+        fetchDocsOfDate(date).then((res) =>
+          setGlobalSpots((globalSpots) => [...globalSpots, res])
+        );
+        setIsLoadingQuery(true);
       });
     } catch (err) {
       console.error(err);
-      // alert("An error occured while fetching user data");
     }
-    // comment this back in when working
-    // setIsLoadingQuery(true);
   };
-
-  // function fetchGlobalSpotsHistory(uniqueDatesFetched) {
-  //   return new Promise((uniqueDatesFetched) => {
-  //     resolve(
-  //       uniqueDatesFetched.forEach((date) => {
-  //         const fetchedColorArray = fetchDocsOfDate(date);
-  //         setGlobalSpots((globalSpots) => [...globalSpots, fetchedColorArray]);
-  //       })
-  //     );
-  //   });
-  // }
-
-  // async function fnAsync() {
-  //   const uniqueDatesFetched = await fetchUniqueDates();
-  //   await fetchGlobalSpotsHistory(uniqueDatesFetched);
-  //   setIsLoadingQuery(true);
-  // }
 
   useEffect(() => {
     if (loading) {
       return;
     }
-    // fetchGlobalSpotsHistory();
-    // .then(setIsLoadingQuery(true));
+    fetchGlobalSpotsHistory()
+      .then(console.log("globalSpots: ", globalSpots))
+      .then(setIsLoadingQuery(true));
   }, [user, loading]);
 
   return (

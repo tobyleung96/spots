@@ -19,7 +19,6 @@ export default function PersonalSpotsHistory() {
       const querySnapshot = await getDocs(q);
       if (querySnapshot.empty == false) {
         querySnapshot.docs.forEach((item) => {
-          //   item.data() = {date: '2022-4-27', color3: 'rgb(77, 255, 0)', color5: 'rgb(255, 157, 0)', color4: 'rgb(17, 0, 255)', color1: 'rgb(0, 34, 255)', …}
           const date = item.data().date;
           const color1 = item.data().color1;
           const color2 = item.data().color2;
@@ -45,8 +44,9 @@ export default function PersonalSpotsHistory() {
     if (loading) {
       return;
     }
-    fetchPersonalSpotsHistory();
-    console.log("personalSpots: ", personalSpots);
+    fetchPersonalSpotsHistory().then(
+      console.log("personalSpots: ", personalSpots)
+    );
   }, [user, loading]);
 
   return (
