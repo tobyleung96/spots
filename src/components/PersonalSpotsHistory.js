@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "../firebase";
-import { query, collection, getDocs, where } from "firebase/firestore";
+import { query, collection, getDocs, where, orderBy } from "firebase/firestore";
 import SpotsArrays from "./SpotsArraysWrapper";
 
 export default function PersonalSpotsHistory() {
@@ -13,6 +13,7 @@ export default function PersonalSpotsHistory() {
     try {
       const q = query(
         collection(db, "dotHistory"),
+        orderBy("date", "desc"),
         where("uid", "==", user.uid)
       );
       const querySnapshot = await getDocs(q);
@@ -45,6 +46,7 @@ export default function PersonalSpotsHistory() {
       return;
     }
     fetchPersonalSpotsHistory();
+    console.log("personalSpots: ", personalSpots);
   }, [user, loading]);
 
   return (

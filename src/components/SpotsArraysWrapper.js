@@ -4,11 +4,16 @@ export function SpotsArray(props) {
   const spotsData = props.spotsData;
   return (
     <div className="spotsArray">
-      {/* <div className="dateText"></div> */}
       {spotsData
         .filter((item, index) => index > 4)
         .map((dateText) => (
-          <div className="dateText" key={dateText.toString()}>
+          <div
+            className="dateText"
+            key={
+              dateText.toString() +
+              Math.floor(Math.random() * 999999999).toString()
+            }
+          >
             {dateText}
           </div>
         ))}
@@ -18,7 +23,10 @@ export function SpotsArray(props) {
           <div
             className="spot"
             style={{ backgroundColor: bgColor }}
-            key={bgColor.toString()}
+            key={
+              bgColor.toString() +
+              Math.floor(Math.random() * 999999999).toString()
+            }
           />
         ))}
     </div>
@@ -32,7 +40,13 @@ export default function SpotsArraysWrapper(props) {
   return (
     <div className="spotsArrays--wrapper">
       {props.spotsData.map((spotArray) => (
-        <SpotsArray spotsData={spotArray} key={spotArray.toString()} />
+        <SpotsArray
+          spotsData={spotArray}
+          key={
+            spotArray.toString() +
+            Math.floor(Math.random() * 999999999).toString()
+          }
+        />
       ))}
     </div>
   );

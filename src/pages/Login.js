@@ -16,7 +16,10 @@ export default function Login() {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/home");
+    if (user) {
+      console.log(user);
+      navigate("/home");
+    }
   }, [user, loading]);
 
   return (

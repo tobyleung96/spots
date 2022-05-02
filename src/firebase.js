@@ -18,15 +18,16 @@ import {
   setDoc,
   doc,
 } from "firebase/firestore";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDyH2sQZkPjS1tW91X_2Hmhrqn_6QOh1Eg",
-  authDomain: "spots-d157d.firebaseapp.com",
-  projectId: "spots-d157d",
-  storageBucket: "spots-d157d.appspot.com",
-  messagingSenderId: "882768430526",
-  appId: "1:882768430526:web:41a7be571e8d5a1614a5ef",
-  measurementId: "G-NWYFTJKQBS",
+  apiKey: "AIzaSyDm6kSsTY2nAzna3UJbVcofDCxQ99N0MYg",
+  authDomain: "spots-a-p-p.firebaseapp.com",
+  projectId: "spots-a-p-p",
+  storageBucket: "spots-a-p-p.appspot.com",
+  messagingSenderId: "666011541215",
+  appId: "1:666011541215:web:6b3265ae2fae7225b6936a",
+  measurementId: "G-ENBEJGEN7M",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -53,10 +54,6 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       authProvider: "local",
       email,
     });
-    // const docRef = doc(db, "dotHistory/" + user.uid);
-    // await setDoc(docRef, {
-    //   // uid: user.uid,
-    // });
   } catch (err) {
     console.error(err);
     alert(err.message);
