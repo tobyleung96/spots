@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "../firebase";
-import { query, collection, getDocs, where } from "firebase/firestore";
+import { query, collection, getDocs, where, orderBy } from "firebase/firestore";
 import SpotsArrays from "./SpotsArraysWrapper";
 
 export default function GlobalSpotsHistory() {
@@ -13,7 +13,8 @@ export default function GlobalSpotsHistory() {
     let uniqueDates = [];
     try {
       // get all the uniqueDates
-      const uniqueDatesDocs = await getDocs(collection(db, "uniqueDates"));
+      const q = query(collection(db, "uniqueDates"), orderBy("date", "desc"));
+      const uniqueDatesDocs = await getDocs(q);
       uniqueDatesDocs.forEach((doc) => {
         uniqueDates = [...uniqueDates, doc.data().date];
       });
@@ -158,9 +159,7 @@ export default function GlobalSpotsHistory() {
     if (loading) {
       return;
     }
-    fetchGlobalSpotsHistory()
-      .then(console.log("globalSpots: ", globalSpots))
-      .then(setIsLoadingQuery(true));
+    fetchGlobalSpotsHistory().then(setIsLoadingQuery(true));
   }, [user, loading]);
 
   return (

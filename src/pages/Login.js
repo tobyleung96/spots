@@ -17,7 +17,7 @@ export default function Login() {
       return;
     }
     if (user) {
-      console.log(user);
+      // console.log(user);
       navigate("/home");
     }
   }, [user, loading]);

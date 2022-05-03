@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { auth, db, logout } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
 export default function Header() {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
-  const navigate = useNavigate();
 
   const fetchUserName = async () => {
     try {
@@ -32,8 +31,10 @@ export default function Header() {
 
   return (
     <div className="header">
-      <div className="header--logo" onClick={useNavigate("/")}>
-        S P O T S
+      <div className="header--logo">
+        <Link className="header--homeButton" to="/">
+          S P O T S
+        </Link>
       </div>
       {name == "" ? (
         <p></p>

@@ -70,7 +70,9 @@ export default function Home() {
       );
       const dateQuerySnapshot = await getDocs(dateQuery);
       if (dateQuerySnapshot.empty === true) {
-        await addDoc(dateCollectionRef, { date: dateString });
+        await addDoc(dateCollectionRef, {
+          date: dateString,
+        });
       }
 
       // Saving or updating dotHistory collection

@@ -343,3 +343,13 @@ body {
   font-family: sans-serif;
   color: #a8a8a8;
 }
+
+.header--homeButton{
+  text-decoration: none;
+  color: black;
+}
+
+.header--homeButton:hover {
+  text-decoration: underline;
+  color: black;
+}

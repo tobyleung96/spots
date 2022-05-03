@@ -44,9 +44,7 @@ export default function PersonalSpotsHistory() {
     if (loading) {
       return;
     }
-    fetchPersonalSpotsHistory().then(
-      console.log("personalSpots: ", personalSpots)
-    );
+    fetchPersonalSpotsHistory();
   }, [user, loading]);
 
   return (
