@@ -49,7 +49,7 @@ export default function GlobalSpotsHistory() {
           color1[2] = [...color1[2], parseInt(rgbArr1[2])];
           const rgbArr2 = doc
             .data()
-            .color1.substring(4, doc.data().color2.length - 1)
+            .color2.substring(4, doc.data().color2.length - 1)
             .replace(/ /g, "")
             .split(",");
           color2[0] = [...color2[0], parseInt(rgbArr2[0])];
@@ -57,7 +57,7 @@ export default function GlobalSpotsHistory() {
           color2[2] = [...color2[2], parseInt(rgbArr2[2])];
           const rgbArr3 = doc
             .data()
-            .color1.substring(4, doc.data().color3.length - 1)
+            .color3.substring(4, doc.data().color3.length - 1)
             .replace(/ /g, "")
             .split(",");
           color3[0] = [...color3[0], parseInt(rgbArr3[0])];
@@ -65,7 +65,7 @@ export default function GlobalSpotsHistory() {
           color3[2] = [...color3[2], parseInt(rgbArr3[2])];
           const rgbArr4 = doc
             .data()
-            .color1.substring(4, doc.data().color4.length - 1)
+            .color4.substring(4, doc.data().color4.length - 1)
             .replace(/ /g, "")
             .split(",");
           color4[0] = [...color4[0], parseInt(rgbArr4[0])];
@@ -73,7 +73,7 @@ export default function GlobalSpotsHistory() {
           color4[2] = [...color4[2], parseInt(rgbArr4[2])];
           const rgbArr5 = doc
             .data()
-            .color1.substring(4, doc.data().color5.length - 1)
+            .color5.substring(4, doc.data().color5.length - 1)
             .replace(/ /g, "")
             .split(",");
           color5[0] = [...color5[0], parseInt(rgbArr5[0])];
