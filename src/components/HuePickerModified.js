@@ -3,7 +3,6 @@
 import React from "react";
 import reactCSS from "reactcss";
 import { HuePicker } from "react-color";
-import convert from "color-convert/conversions";
 
 class HuePickerModified extends React.Component {
   state = {
